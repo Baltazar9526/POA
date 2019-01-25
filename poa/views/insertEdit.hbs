@@ -5,10 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link rel="icon" type="image/png" href="images/libros.png"/>
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
@@ -22,7 +19,6 @@
 </head>
 <body>	
 	<div class="align-content-around">
-
     <nav class="navbar-expand-lg my-2 my-lg-0 navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="index">
             <img src="images/libros.png" width="30" height="30" href="index" class="d-inline-block align-top" alt="">
@@ -49,14 +45,9 @@
         </ul>			
     </div>
 	</nav>
-	
 	<div ng-app="ProyectoIntegrador" ng-controller="editarInsertar">
-
 			<div interface-Insertar-Editar ></div>
-
 	</div>
-
-
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<script src="vendor/bootstrap/js/popper.js"></script>
@@ -66,14 +57,11 @@
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script src="js/main.js"></script>
-
-
 	<script>
 			var app = angular.module("ProyectoIntegrador", []);
 			app.directive('interfaceInsertarEditar',function(){
         return{
 			template : `
-
 				<div style="clear:both;height:40px;"></div>
 	<div class="text-center">
 	</div>
@@ -218,17 +206,11 @@
 			</div>
 		</div>
 	</div>
-	
 	<div style="clear:both;height:60px;"></div>
-
 	<div id="dropDownSelect1"></div>	
-			
 			`
         };
     });
 			</script>
-
-
-
 </body>
 </html>

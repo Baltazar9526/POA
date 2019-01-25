@@ -4,10 +4,7 @@
 	<title></title>
 </head>
 <body>
-
-
 <form class="form-horizontal">
-
 <input type="hidden" name="ope" id="ope" value="{{ope}}"/>
 <fieldset>
 <a href="/usuarios/" class="btn btn-link">
@@ -16,52 +13,39 @@
 </a>
 <!-- Form Name -->
 <legend>Usuario</legend>
-
-
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Nombre">Nombre</label>  
   <div class="col-md-4">
   <input id="Nombre" name="Nombre" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Nombre}}">
-    
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Apellido">Apellido</label>  
   <div class="col-md-4">
   <input id="Apellido" name="Apellido" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Apellido}}">
-    
   </div>
 </div>
-
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Nombre">Usuario</label>  
   <div class="col-md-4">
   <input id="Usuario" name="Usuario" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Usuario}}">
-    
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Nombre">Rol</label>  
   <div class="col-md-4">
-  <input id="Rol" name="Rol" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Rol}}">
-    
+  <input id="Rol" name="Rol" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Rol}}">    
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="Nombre">Contraseña</label>  
   <div class="col-md-4">
   <input id="Contraseña" name="Contraseña" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Contraseña}}">
-    
   </div>
 </div>
 <!-- Text input-->
@@ -69,12 +53,8 @@
   <label class="col-md-4 control-label" for="Nombre">Correo</label>  
   <div class="col-md-4">
   <input id="Correo" name="Correo" type="text" placeholder="" class="form-control input-md" required="" value="{{usuarios.Correo}}">
-    
   </div>
 </div>
-
-
-
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="btnOperacion"></label>
@@ -82,21 +62,14 @@
     <button type="button" id="btnOperacion" name="btnOperacion" id="btnOperacion" class="btn btn-success">Aceptar</button>
   </div>
 </div>
-
 </fieldset>
-
 <div class="alert alert-success" style="display: none" role="alert" id="alerta1">Se inserto correctamente</div>
 <div class="alert alert-danger" style="display: none"  role="alert" id="alerta2">Hubo un problema al insertar el registro</div>
-
 <input type="hidden" name="__id" id="__id" value="{{usuarios._id}}">
-
 </form>
-
 <script type="text/javascript">
-	
  $(document).ready(function(){
     $("#btnOperacion").click(function(){
-       
         $.post("/usuarios/operacion",{
           nombre: $("#Nombre").val(),
           apellido: $("#Apellido").val(),
@@ -108,9 +81,7 @@
           id:$("#__id").val()
         },
         function(data,status){
-           
            var campos = ["Nombre","Apellido","Usuario","Rol","Contraseña","Correo"];
-
            if (parseInt(data) == 1) {
            	  $("#alerta1").fadeIn("slow");
            	  QuitarMsg("alerta1");
@@ -119,30 +90,20 @@
            	  $("#alerta2").fadeIn("slow");
            	  QuitarMsg("alerta2");
            	}
-
            // alert("Data: " + data + "\nStatus: " + status);
         });
-
-        
     });
-
 });
-
 //funcion para limpiar las cajas de texto por medio de un arreglo
 LimpiarCajasTexto = function(args){
-  
  for (var i = 0; i < args.length; i++) {
  	 $("#"+args[i]).val("");
    }
- 
 }
-
 //Funcion para quitar la alerta
  QuitarMsg = function (id){
  	setTimeout(function(){ $("#"+id).fadeOut("slow");}, 3000);
  }
- 
 </script>
-
 </body>
 </html>

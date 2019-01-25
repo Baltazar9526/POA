@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<h1>{{usuarioslib}}</h1>
+
+
+<table class="table">
+
+<tr style="font-weight: bold;">
+<td>Nombre</td><td>Apellido</td><td>Usuario</td><td>Rol</td><td>Correo</td>
+</tr>
+
+{{#each Usuario}}
+  <tr>
+   <td>{{Nombre}}</td> <td>{{Apellido}}</td> <td>{{Usuario}}</td><td>{{Rol}}</td><td>{{Correo}}</td>
+  </tr>
+{{/each}}
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Libreria</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="images/libros.png"/>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>	
+	<div class="align-content-around">
+
+    <nav class="navbar-expand-lg my-2 my-lg-0 navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index">
+            <img src="images/libros.png" width="30" height="30" href="index" class="d-inline-block align-top" alt="">
+            Libreria
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="index">Inicio </span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="libros">Lo recomendado</a>
+            </li>	
+            <li class="nav-item active">
+                <a class="nav-link barra" href="insertEdit">Editar<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="infoLog">Info</a>
+            </li>			  
+        </ul>			
+    </div>
+	</nav>
+	
+	<div ng-app="ProyectoIntegrador" ng-controller="editarInsertar">
+
+			<div interface-Insertar-Editar ></div>
+
+	</div>
+
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+
+
+	<script>
+			var app = angular.module("ProyectoIntegrador", []);
+			app.directive('interfaceInsertarEditar',function(){
+        return{
+			template : `
+
+				<div style="clear:both;height:40px;"></div>
+	<div class="text-center">
+	</div>
+	<div style="clear:both;height:40px;"></div>
+	<div class="main-body section-gap">
+		<div class="container box_1170">
+			<div class="row">
+				<div></div>
+			<div class="col post-list">
+				<section class="post-area">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<a title="Los Tejos" href="https://www.amazon.es/Mi-historia-Michelle-Obama-ebook/dp/B07BHJJN4R"><img class="img" src="images/c1.png"></a>	
+			</div>
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>
+				<div><strong href="#">Mi historia - Michelle Obama</strong></div>
+				<div>Editorial: </div>
+				<div>Un íntimo, poderoso e inspirador libro de memorias de la ex primera dama de Estados Unidos.</div>
+				<div class="blog-meta">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>Nov 13, 2018</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<img class="img" src="images/c2.png" alt="">
+				</div>		
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>
+				<div><strong href="#">Jaque al psicoanalista - John Katzenbach</strong></div>
+				<div>Editorial: </div>
+				<div>Un auténtico thriller con elementos muy oscuros, dinamismo, tensión, violencia contenida y constantes giros.</div>
+				<div class="blog-meta">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>Oct 11, 2018</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<div style="clear:both;height:40px;"></div>
+				<img class="img" src="images/c3.png" alt="">
+				</div>
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>
+				<div><strong href="#">Las tejedoras de destinos - Gennifer Albin</strong></div>
+				<div>Editorial: </div>
+				<div>Dotada de una habilidad fuera de lo común para tejer el tiempo, Adelice es exactamente lo que la corporación está buscando, y en Arras ser elegida tejedora es todo a lo que una chica puede aspirar.</div>
+				<div class="blog-meta">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>May 1, 2013</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<div style="clear:both;height:40px;"></div>
+				<img class="img" src="images/c4.png" alt="">
+				</div>
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>
+				<div><strong href="#">Hush hush - Becca Fitzpatrick</strong></div>
+				<div>Editorial: </div>
+				<div>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+				exciting to think about setting up your own viewing station.</div>
+				<div class="blog-meta">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<div style="clear:both;height:40px;"></div>
+				<img class="img" src="images/c1.png" alt="">
+				</div>
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>
+				<div><strong href="#">An Stormy Evening</strong></div>
+				<div>Editorial: </div>
+				<div>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+				exciting to think about setting up your own viewing station.</div>
+				<div class="blog-met">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+				<div class="single-post-item">
+				<div class="post-thumb">
+				<div style="clear:both;height:40px;"></div>
+				<img class="img" src="images/c2.png" alt="">
+				</div>
+				<div class="post-details">
+				<div style="clear:both;height:10px;"></div>				
+				<div><strong href="#">An Stormy Evening</strong></div>
+				<div>Editorial: </div>
+				<div>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+				exciting to think about setting up your own viewing station.</div>
+				<div class="blog-meta">
+				<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="login100-form-btn">Editar</button>
+					<button type="button" class="login100-form-btn">Eliminar</button>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				</section>
+				</div>		
+			</div>
+		</div>
+	</div>
+	
+	<div style="clear:both;height:60px;"></div>
+
+	<div id="dropDownSelect1"></div>	
+			
+			`
+        };
+    });
+			</script>
+
+
+
+</body>
+</html>

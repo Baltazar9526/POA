@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Libreria</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+	<link rel="icon" type="image/png" href="images/libros.png"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>	
+	<div class="align-content-around">
+
+	<nav class="navbar-expand-lg my-2 my-lg-0 navbar navbar-dark bg-dark">
+	<a class="navbar-brand" href="index">
+		<img src="images/libros.png" width="30" height="30" href="index" class="d-inline-block align-top" alt="">
+		Libreria
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	</nav>
+
+	<div ng-app="ProyectoIntegrador" >
+
+			<div interface-Index ></div>
+
+	</div>
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="../routes/Insertar.js"></script>
+	<script src="js/main.js"></script>
+
+
+	<script>
+ 				
+			var app = angular.module("ProyectoIntegrador", []);
+			app.directive('interfaceIndex',function(){
+        return{
+			template : `
+
+			<div class="container-login100" style="background-image: url('images/type.jpg');">
+			<div class="col">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Iniciar sesion
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+					<div class="wrap-input100 validate-input" data-validate = "Insertar usuario">
+						<input class="input100" id="usuario1" type="text" name="user" placeholder="Usuario">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Insertar contraseña">
+						<input class="input100" id="contraseña1" type="password" name="contr" placeholder="Contraseña">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" id="btnEntrar1" onclick="validar();" >
+							Entrar
+						</button>
+					</div>
+					<div class="dropdown-menu-right container-login100-form-btn m-t-32">
+						<button class="dropdown-toggle login100-form-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Perfil
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						  <a class="dropdown-item" href="#">Admin</a>
+						  <a class="dropdown-item" href="#">Empleado</a>
+						  <a class="dropdown-item" href="#">Usuario</a>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+		<div class="col">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Nuevo registro
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+						<div class="wrap-input100 validate-input" data-validate = "Insertar nombre">
+								<input class="input100" id="Nombre" type="text" name="nombre" placeholder="Nombre" value="{{usuarios.Nombre}}">>
+								<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+							</div>
+					<div class="wrap-input100 validate-input" data-validate = "Insertar usuario">
+						<input class="input100" id="Usuario"type="text" name="user" placeholder="Usuario" value="{{usuarios.Usuario}}">>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Insertar contraseña">
+						<input class="input100" id="Contraseña"type="password" name="contr" placeholder="Contraseña" value="{{usuarios.Contraseña}}">>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Insertar correo">
+								<input class="input100" id="Correo" type="text" name="correo" placeholder="Correo" value="{{usuarios.Correo}}">>
+								<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate = "Insertar apellido">
+								<input class="input100" id="Apellido" type="text" name="apellido" placeholder="Apellido" value="{{usuarios.Apellido}}">>
+								<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate = "Insertar Rol*(Empleado o Usuario)">
+								<input class="input100" id="Rol" type="text" name="rol" placeholder="Empleado/Usuario" value="{{usuarios.Rol}}">>
+								<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+							</div>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" id="btnOperacion" onclick="validarRol();">
+							Registrar
+						</button>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="dropDownSelect1"></div>			
+			`
+			 
+        };
+    });
+	            function validar(){
+					var usuario=document.getElementById("usuario1").value;
+				 	var contraseña = document.getElementById("contraseña1").value;
+					var pagina = "libros";
+					if((usuario === "Saul") && (contraseña === "123") ){
+						alert("Usuario Correcto");
+						location.href=pagina;
+					}else{
+						alert("Usuario Incorrecto");
+					}
+				}
+		
+ 
+
+			</script>
+
+
+</body>
+</html>

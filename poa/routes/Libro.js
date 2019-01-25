@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var mongoCliente = 
-require("mongodb").MongoClient;
+var mongoCliente = require("mongodb").MongoClient;
 var cors = require('cors');
 router.use(cors());
 var url = "mongodb://localhost:27017";
-const dbName = "local";
+const dbName = "Libreria";
 var ObjectId = require("mongodb").ObjectId;
 router.get('/', function(req, res, next){
     mongoCliente.connect(url, function(err, client){

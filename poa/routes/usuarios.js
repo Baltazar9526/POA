@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var cors = require('cors');
 router.use(cors());
-const MongoClient = require("mongod").MongoClient;
+var mongoCliente = require("mongodb").MongoClient;
 //crear bd de antes 
 const url = "mongodb://localhost:27017";
 const dbName ="Libreria";
-var ObjectId = require("mongod").ObjectId;
+var ObjectId = require("mongodb").ObjectId;
 router.get('/', function(req,res,next){
-    MongoClient.connect(url, function(err,client){
+    mongoCliente.connect(url, function(err,client){
         if(err) throw err;
         console.log("Connected corretly to server");
         const db = client.db(dbName);
@@ -24,7 +24,7 @@ router.get('/', function(req,res,next){
 });
 //////////////////////////////////
 router.get('/getDatos', function(req,res,next){
-    MongoClient.connect(url, function(err,client){
+    mongoCliente.connect(url, function(err,client){
         if(err) throw err;
         console.log("Connected corretly to server");
         const db = client.db(dbName);
@@ -45,7 +45,7 @@ router.get('/modificar/:id', function(req, res, next) {
     console.log(req.params.id);
     var oId = new ObjectId(req.params.id);
     var query = {"_id": oId};
-    MongoClient.connect(url, function(err,client){
+    mongoCliente.connect(url, function(err,client){
         if (err) throw err;
         const db = client.db(dbName);
         db.collection("Persona").findOne(query,function(err,result){
@@ -78,7 +78,7 @@ router.post('/operacion', function(req, res, next) {
         rol = req.body.rol;
         correo = req.body.correo;
         contraseña=req.body.contraseña;
-        MongoClient.connect(url, function(err,client){
+        mongoCliente.connect(url, function(err,client){
             if (err) throw err;
             const db = client.db(dbName);
             var query =  {"Nombre":nombre,"Apellido":apellido,"Usuario":usuario,"Rol":rol,"Contraseña":contraseña,"Correo":correo};
@@ -100,7 +100,7 @@ router.post('/operacion', function(req, res, next) {
         correo = req.body.correo;
         contraseña = req.body.contraseña;  
       	id = req.body.id;
-        MongoClient.connect(url, function(err,client){
+        mongoCliente.connect(url, function(err,client){
             if (err) throw err;
             var oId = new ObjectId(id);
             var query = {"_id": oId};
@@ -119,7 +119,7 @@ router.post('/operacion', function(req, res, next) {
     //   query = "UPDATE usuarios SET nombre = '"+nombre+"', apellido = '"+apellido+"', edad="+edad+" WHERE id = "+id+" ";
     }else if(tipoOperacion == "d"){
      	id = req.body.id;
-        MongoClient.connect(url, function(err,client){
+        mongoCliente.connect(url, function(err,client){
             if (err) throw err;
             var oId = new ObjectId(id);
             var query = {"_id": oId};
